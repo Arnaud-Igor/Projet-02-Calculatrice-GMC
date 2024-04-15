@@ -1,0 +1,144 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+@font-face {
+    font-family: 'digital';
+    src: url(fonts/digital-7.ttf);
+}
+
+body {
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.calculatrice {
+    /* background-color: #1e90ff; */
+    background-color: #222;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px 10px 15px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 5px 5px 10px #222;
+}
+
+.head-calc {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-block: 15px;
+}
+
+.ecran-solaire {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(1);
+    background-color: #5a3a22;
+    height: 35px;
+    width: 90px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.ecran-solaire .case:last-child, .ecran-solaire .case:nth-child(2) {
+    border-left: 1px solid rgba(0, 0, 0, .5);
+}
+
+.marque {
+    font-weight: bold;
+    pointer-events: none;
+    color: #1e90ff;
+    font-family: 'digital';
+    letter-spacing: 2px;
+    font-size: 1.1em;
+}
+
+.marque span {
+    color: white;
+}
+
+.ecran {
+    background-color: #009432;
+    height: 100px;
+    width: 310px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 0 10px 5px 10px;
+    margin-inline: auto;
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    pointer-events: none;
+    font-family: 'digital';
+    box-shadow: inset 9px 9px 9px rgba(0, 0, 0, .5);
+    overflow-x: hidden;
+}
+
+.body-calc {
+    width: 100%;
+    padding: 20px 0 10px 0;
+}
+
+.touches {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    grid-template-rows: repeat(5, 60px);
+    gap: 10px;
+}
+
+.bouton {
+    background-color: white;
+    border-radius: 25%;
+    font-size: 1.5em;
+    color: #000;
+    cursor: pointer;
+    box-shadow: 2px 4px #4a4a4a;
+}
+
+.bouton[data-code="Equal"] {
+    grid-column: span 2;
+    background-color: #1e90ff;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+}
+
+.bouton[data-code="keyC"] {
+    background-color: #f39c12;
+    font-weight: bold;
+    font-size: 2em;
+    color: white;
+}
+
+.bouton[data-code="NumpadDecimal"] {
+    font-weight: bold;
+    font-size: 3em;
+}
+
+.bouton:active {
+    box-shadow: 0 0 1px 1px #4a4a4a;
+    transform: translateY(2px);
+}
+
